@@ -17,3 +17,18 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+  run-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Nodejs Version
+        uses: actions/setup-node@v3
+        with:
+          node-version: "24.x"
+
+      - name: Install dependencies
+        run: npm run build
